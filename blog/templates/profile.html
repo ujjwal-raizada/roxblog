@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1 style="color:green;font-family: verdana">Profile: {{ author.user.username }}</h1>
+
+<div style="font-family: verdana;color: blue;font-size: 200%">
+First name: {{ author.first_name }}
+<br><br>
+Last name: {{ author.last_name }}
+<br><br>
+Date of birth: {{ author.date_of_birth }}
+
+</div>
+<br><br>
+<a href="{% url 'index' %}">Home</a>
+{% endblock %}

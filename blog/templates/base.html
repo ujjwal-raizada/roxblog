@@ -20,6 +20,14 @@
     color: blue;
 }
 
+.bottomright {
+    position: absolute;
+    bottom: 20px;
+    right: 16px;
+    font-size: 18px;
+    color: blue;
+}
+
 img { 
     width: 100%;
     height: auto;
@@ -38,6 +46,12 @@ img {
 	{% endif %}
 
 
+ </div>
+
+ <div class="bottomright">
+<a href="{% url 'newblog' %}">Create a new blog</a>
+<br><br>
+<a href="{% url 'index' %}">Home</a>
  </div>
 
   {% block sidebar %}<!-- insert default navigation text for every page -->{% endblock %}

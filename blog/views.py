@@ -61,8 +61,14 @@ def SignUp(request):
 		form = SignUpForm()
 	return render(request, 'signup.html', {'form':form})
 
-
 @login_required
 def LogOut(request):
 	logout(request)
 	return redirect('index')
+
+def profile(request,username):
+	print(str(username))
+	author = get_object_or_404(Author, user__username=username)
+	return render(request, 'profile.html', {'author':author})
+
+ 
