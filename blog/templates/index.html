@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+
+<li><strong>Blogs:</strong> {{ num_blog }}</li>
+<li><strong>authors:</strong> {{ num_authors }}</li>
+<br>
+
+
+<h1 style="color:green;font-family:verdana;"> Blogs : </h1><br>
+{% for blog in blogs %}
+ <a href={% url 'index' %}{{ blog.get_link }}> <strong>{{ blog.title }}</strong></a><br>
+{{ blog.body }}
+<br>
+<b>By: </b>
+{% if blog.author != NONE %}
+
+{{blog.author.user.username }}
+
+{% else %}
+Anonymous
+{% endif %}
+
+<br>
+<br>
+{% endfor %}
+
+<h1 style="color:green;font-family:verdana;"> Authors : </h1><br>
+
+{% for author in authors %}
+
+<br>{{  forloop.counter  }}) 
+{{author.user.username}}
+
+{% endfor %}
+{% endblock %}

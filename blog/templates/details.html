@@ -1,0 +1,8 @@
+<h1 style="color:green;font-family:verdana"> {{ blog.title }} </h1>
+<br>
+{{ blog.body }}
+<br>
+<br>
+<b>By: </b>{{ blog.author.user.username }}
+<br><br>
+<a href={% url 'index' %}>Home</a>
