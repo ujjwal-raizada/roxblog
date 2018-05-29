@@ -5,12 +5,25 @@
 <li><strong>authors:</strong> {{ num_authors }}</li>
 <br>
 
+<style>
+
+
+
+</style>
 
 <h1 style="color:green;font-family:verdana;"> Blogs : </h1><br>
 {% for blog in blogs %}
- <a href={% url 'index' %}{{ blog.get_link }}> <strong>{{ blog.title }}</strong></a><br>
+<div class="one">
+
+<!-- blogs start -->
+
+ <a href={% url 'index' %}{{ blog.get_link }}> <strong>{{ blog.title }}</strong></a><br><br>
+ <div>
+	<img src="https://avatars.dicebear.com/v2/male/{{blog.author.user.username }}.svg" >
+</div>
 {{ blog.body }}
-<br>
+<br><br>
+
 <b>By: </b>
 {% if blog.author != NONE %}
 
@@ -22,7 +35,9 @@ Anonymous
 
 <br>
 <br>
+</div>
 {% endfor %}
+<!-- blog ends -->
 
 <h1 style="color:green;font-family:verdana;"> Authors : </h1><br>
 

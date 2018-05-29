@@ -20,6 +20,14 @@
     color: blue;
 }
 
+.topright2 {
+    position: absolute;
+    top: 75px;
+    right: 16px;
+    font-size: 18px;
+    color: blue;
+}
+
 .bottomright {
     position: absolute;
     bottom: 20px;
@@ -28,11 +36,47 @@
     color: blue;
 }
 
-img { 
-    width: 100%;
-    height: auto;
-    opacity: 0.3;
+
+body {
+    /*background-image: url("https://www.w3schools.com/css/img_tree.png");*/
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRj2m8z_NvHsByT0sVqx91-qj3PpvVtJqE1XRs7nb2IbAC04kib");
+    /*background-repeat: no-repeat;*/
+    /*background-position: right;*/
+    /*margin-right: 200px;*/
+    /*background-attachment: fixed;*/
 }
+.one {
+    border-left: 6px solid green;
+    background-color: white;
+        margin-top: 10px;
+    margin-bottom: 15px;
+    margin-right: 30%;
+    margin-left: 15px;
+
+        padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+
+
+    outline-style: double;
+    outline-color: green;
+    text-align: justify;
+}
+a {
+    text-decoration: none;
+    color: blue;
+}
+a:hover {
+    color: brown;
+}
+img {
+    float: left;
+    height: 70px;
+    width: 70px;
+}
+
+
 </style>
  <div class="topright">
  	 
@@ -44,14 +88,16 @@ img {
 	<a href="{% url 'login' %}">Login</a> | 
     <a href="{% url 'SignUp' %}">SignUp</a>
 	{% endif %}
-
-
+    <br><br><br>
  </div>
 
- <div class="bottomright">
-<a href="{% url 'newblog' %}">Create a new blog</a>
+ <div class="topright2">
+        <a href="{% url 'newblog' %}">New blog +</a>
 <br><br>
 <a href="{% url 'index' %}">Home</a>
+</div>
+
+ <div class="bottomright">
  </div>
 
   {% block sidebar %}<!-- insert default navigation text for every page -->{% endblock %}
