@@ -69,6 +69,7 @@ def LogOut(request):
 def profile(request,username):
 	print(str(username))
 	author = get_object_or_404(Author, user__username=username)
-	return render(request, 'profile.html', {'author':author})
+	blogs = blog.objects.all().filter(author__user__username=username)
+	return render(request, 'profile.html', {'author':author, 'blogs':blogs})
 
  

@@ -21,6 +21,9 @@ class blog(models.Model):
 	category = models.ManyToManyField(Category, help_text='Select a category for this post')
 	author = models.ForeignKey('Author', on_delete=models.CASCADE)
 
+	class Meta:
+		ordering = ["-posted"]
+
 
 	def get_link(self):
 		return self.pk

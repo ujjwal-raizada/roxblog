@@ -3,14 +3,27 @@
 
 <h1 style="color:green;font-family: verdana">Profile: {{ author.user.username }}</h1>
 
-<div style="font-family: verdana;color: blue;font-size: 200%">
-First name: {{ author.first_name }}
-<br><br>
-Last name: {{ author.last_name }}
+<div class="one3" style="font-family: verdana;color: blue;font-size: 200%"><img class="pro" src="https://avatars.dicebear.com/v2/male/{{author.user.username }}.svg" >
+
+ name: {{ author.first_name }} {{ author.last_name }}
 <br><br>
 Date of birth: {{ author.date_of_birth }}
+<br><br>
+Email: {{ author.user.email }}
+</div>
+<br>
+<br>
 
+
+<div style="margin-left: 30px">
+	<h3 style="color:green;font-family: verdana">Posts by {{ author.user.username }} : </h3>
+{% for blog in blogs %}
+<br>
+<a href="{% url 'index' %}{{ blog.pk }}">
+{{ blog.title }}
+</a>
+<br>
+{% endfor %}
 </div>
 <br><br>
-<a href="{% url 'index' %}">Home</a>
 {% endblock %}
